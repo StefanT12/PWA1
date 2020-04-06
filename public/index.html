@@ -1,0 +1,121 @@
+<!--
+  As a side note, I have followed this tutorial in conjunction with the lessons,
+  https://www.youtube.com/watch?v=egmwY9n6qWY&list=PL4cUxeGkcC9gTxqJBcDmoi5Q2pzDusSL7&index=11
+-->
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cool PWA Shopping List</title>
+  <meta name="theme-color" content="#317EFB"/>
+  <!-- https://materializecss.com/ -->
+  <link type="text/css" href="/css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" href="/css/styles.css" rel="stylesheet">
+  <script type="text/javascript" src="/js/materialize.min.js"></script>
+  <!-- "PWA" enabled through manifest -->
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- iOS support -->
+    <!--Let phone choose its icon -->
+    <link rel="apple-touch-icon" href="/img/icons/appIcon64.png">
+    <link rel="apple-touch-icon" href="/img/icons/appIcon256.png">
+    <!--Colorize top bar of app -->
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+
+</head>
+
+<body class="grey lighten-4">
+
+  <!-- top nav -->
+  <nav class="z-depth-0">
+    <div class="nav-wrapper container">
+      <a href="/">Cool<span>PWA</span>Shopping<span>List</span></a>
+
+      <span class="right grey-text text-darken-1">
+        <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
+      </span>
+    
+    </div>
+  </nav>
+
+  <!-- side nav, list func -->
+  <ul id="side-menu" class="sidenav side-menu">
+    <li><a class="subheader">All my shopping Lists</a></li>
+
+     <!-- all lists will be contained here -->
+    <div class = 'lists'> </div>
+
+    <div class="divider"></div>
+    
+    <!-- add list -->
+    <form class="add-list container section">
+      <h6 class="subheader">New Shopping List</h6>
+      
+      <div class="input-field">
+        <input placeholder="e.g. Tuesday List" id="listName" type="text" class="validate">
+        <label for="listName">Shopping List Title</label>
+      </div>
+     
+      <div class="input-field center">
+        <button class="btn-small">Add</button>
+      </div>
+    </form>
+
+  </ul>
+
+   <!-- List Title / Delete -->
+  <div class = 'listTitleContainer'>
+    <h4 class = 'container grey-text text-darken-1 listTitle' id = 'ShoppingListTitle' data-id = ''>Select a list</h2>
+      <a class="btn-floating btn-small waves-effect waves-light red listDelete"><i class="material-icons">delete</i></a>
+  </div>
+  
+     <!-- Current list items -->
+    <div class="items container grey-text text-darken-1">
+    
+    </div>
+  
+
+  <div class="center">
+    <a class="btn-floating btn-small btn-large add-btn sidenav-trigger" data-target="side-form">
+      <i class="material-icons">add</i>
+    </a>
+  </div>
+
+  <!-- add item side nav -->
+  <div id="side-form" class="sidenav side-form">
+    <form class="add-item container section" data-id = ''>
+      <h6 >New Item (Select List First)</h6>
+      <div class="divider"></div>
+      <div class="input-field">
+        <input placeholder="e.g. Ninja soup" id="itemName" type="text" class="validate">
+        <label for="itemName">Item Title</label>
+      </div>
+      <div class="input-field">
+        <input placeholder="e.g. Fotex, Apotek etc" id="itemPlace" type="text" class="validate">
+        <label for="itemPlace">Where to buy it</label>
+      </div>
+      <div class="input-field center">
+        <button class="btn-small">Add</button>
+      </div>
+    </form>
+  </div>
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+
+  <!-- registry of service worker & firebase & others-->
+  <script src="/js/app.js"></script>
+  <!-- UI func -->
+  <script src="/js/ui.js"></script>
+  <!-- all db related functionality -->
+  <script src="/js/db.js"></script>
+  
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+    "name": "PWA Shopping List",
+    "short_name": "PWASL",
+    "start_url":"/index.html",
+    "display": "standalone",
+
+    "background_color":"#FFE9D2",
+    "theme_color":"#FFE1C4",
+
+    "orientation":"portrait-primary",
+    "icons":[
+        {
+            "src":"/img/icons/appIcon32.png",
+            "type":"image/png",
+            "sizes":"32x32"
+        },
+        {
+            "src":"/img/icons/appIcon64.png",
+            "type":"image/png",
+            "sizes":"64x64"
+        },
+        {
+            "src":"/img/icons/appIcon128.png",
+            "type":"image/png",
+            "sizes":"128x128"
+        },
+        {
+            "src":"/img/icons/appIcon256.png",
+            "type":"image/png",
+            "sizes":"256x256"
+        },
+        {
+            "src":"/img/icons/appIcon256.png",
+            "type":"image/png",
+            "sizes":"512x512"
+        }
+    ]
+}
